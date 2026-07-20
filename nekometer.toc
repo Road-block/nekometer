@@ -1,5 +1,5 @@
-## Interface: 50504, 20505, 11508
-## Version: 2.6.2
+## Interface: 50504, 20506, 11508
+## Version: 2.6.3
 ## SavedVariables: NekometerConfig
 ## Title: Nekometer
 ## Notes: minimalistic damage meter
