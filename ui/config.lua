@@ -10,7 +10,7 @@ local config = {
 
 function config:Init()
     self.category, self.layout = Settings.RegisterVerticalLayoutCategory("Nekometer")
-    self.category.ID = addonName
+    nekometer.optionsCat = self.category
 
     self.layout:AddInitializer(CreateSettingsListSectionHeaderInitializer("Global Options"))
     self:CreateProxiedCheckBox("Lock window", "Prevent the window from being moved or resized", "windowLocked")
@@ -47,6 +47,10 @@ function config:Init()
 
     SettingsPanel:SetScript("OnHide", function() self:OnSettingsClosed() end)
     Settings.RegisterAddOnCategory(self.category)
+    nekometer.optionsCatID = self.category:GetID()
+    if not nekometer.optionsCatID then
+        self.category.ID = addonName
+    end
 end
 
 function config:CreateProxiedSlider(name, tooltip, min, max, step, variable)
