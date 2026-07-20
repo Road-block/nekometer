@@ -6,7 +6,8 @@ local addonName, nekometer = ...
 local commands = {}
 
 function commands:config(_)
-    Settings.OpenToCategory(addonName)
+    local catID = nekometer.optionsCatID or addonName
+    Settings.OpenToCategory(catID,addonName)
 end
 
 function commands:wipe(_)
